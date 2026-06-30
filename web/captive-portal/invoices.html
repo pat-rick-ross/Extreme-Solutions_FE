@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices - ISP Portal</title>
+    <link rel="stylesheet" href="../css/captive-portal.css">
+</head>
+<body>
+    <nav class="portal-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/logo.svg" alt="ISP Logo" height="35">
+                <span>ISP Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="invoices.html" class="active">Invoices</a>
+                <a href="payment.html">Pay</a>
+                <a href="status.html">Status</a>
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="portal-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>📄 Invoices</h1>
+                <div class="header-actions">
+                    <button id="refresh-btn" class="btn btn-secondary">🔄 Refresh</button>
+                </div>
+            </div>
+
+            <div class="filters">
+                <select id="status-filter" class="filter-select">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="paid">Paid</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+                <input type="text" id="search-invoice" placeholder="Search invoice..." class="filter-input">
+            </div>
+
+            <div class="table-container">
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Date</th>
+                            <th>Due Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-list">
+                        <tr><td colspan="6" class="loading">Loading invoices...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button class="page-btn" data-page="prev">← Prev</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button class="page-btn" data-page="next">Next →</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/captive-portal.js"></script>
+</body>
+</html>

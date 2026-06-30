@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ISP Portal</title>
+    <link rel="stylesheet" href="../css/captive-portal.css">
+    <link rel="icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <nav class="portal-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/logo.svg" alt="ISP Logo" height="35">
+                <span>ISP Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="invoices.html">Invoices</a>
+                <a href="payment.html">Pay</a>
+                <a href="status.html">Status</a>
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="portal-main">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>Welcome, <span id="customer-name">Customer</span> 👋</h1>
+                <p>Here's your account overview</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <span class="stat-label">Balance</span>
+                        <span class="stat-value" id="balance">KES 0.00</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📄</div>
+                    <div class="stat-content">
+                        <span class="stat-label">Pending Invoices</span>
+                        <span class="stat-value" id="pending-invoices">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-content">
+                        <span class="stat-label">Internet Status</span>
+                        <span class="stat-value status-active" id="internet-status">Active</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <span class="stat-label">Package</span>
+                        <span class="stat-value" id="package-name">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Recent Invoices</h3>
+                    <div id="recent-invoices">
+                        <p class="loading">Loading invoices...</p>
+                    </div>
+                    <a href="invoices.html" class="view-all">View All →</a>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions">
+                        <a href="payment.html" class="action-btn">💰 Make Payment</a>
+                        <a href="#" class="action-btn">📊 View Usage</a>
+                        <a href="#" class="action-btn">🔄 Upgrade Package</a>
+                        <a href="#" class="action-btn">📞 Contact Support</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card full-width">
+                    <h3>Data Usage</h3>
+                    <div class="usage-chart">
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 45%"></div>
+                        </div>
+                        <div class="usage-info">
+                            <span>45% used</span>
+                            <span>450 GB / 1 TB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/captive-portal.js"></script>
+</body>
+</html>

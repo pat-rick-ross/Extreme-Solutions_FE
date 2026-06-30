@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay - ISP Portal</title>
+    <link rel="stylesheet" href="../css/captive-portal.css">
+</head>
+<body>
+    <nav class="portal-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/logo.svg" alt="ISP Logo" height="35">
+                <span>ISP Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="invoices.html">Invoices</a>
+                <a href="payment.html" class="active">Pay</a>
+                <a href="status.html">Status</a>
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="portal-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>💳 Make Payment</h1>
+            </div>
+
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <h3>Pay via M-PESA</h3>
+                    <form id="mpesa-payment-form" class="payment-form">
+                        <div class="form-group">
+                            <label for="invoice-select">Select Invoice</label>
+                            <select id="invoice-select" name="invoice_id" required>
+                                <option value="">-- Select an invoice --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount">Amount (KES)</label>
+                            <input type="number" id="amount" name="amount" step="0.01" min="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-number">M-PESA Phone Number</label>
+                            <input type="tel" id="phone-number" name="phone_number" placeholder="2547XXXXXXXX" required>
+                            <small>Enter your M-PESA registered number</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="pay-btn">
+                            💳 Pay Now
+                        </button>
+                    </form>
+                    <div id="payment-status" class="payment-status hidden"></div>
+                </div>
+
+                <div class="payment-info-card">
+                    <h3>Payment Instructions</h3>
+                    <ol>
+                        <li>Select the invoice you want to pay</li>
+                        <li>Enter your M-PESA phone number</li>
+                        <li>Click "Pay Now"</li>
+                        <li>Enter your M-PESA PIN when prompted</li>
+                        <li>Payment will be confirmed automatically</li>
+                    </ol>
+                    
+                    <div class="payment-methods">
+                        <h4>Supported Methods</h4>
+                        <div class="method-icons">
+                            <span class="method">M-PESA</span>
+                            <span class="method">Bank Transfer</span>
+                            <span class="method">Cash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/captive-portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Status - ISP Portal</title>
+    <link rel="stylesheet" href="../css/captive-portal.css">
+</head>
+<body>
+    <nav class="portal-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/logo.svg" alt="ISP Logo" height="35">
+                <span>ISP Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="invoices.html">Invoices</a>
+                <a href="payment.html">Pay</a>
+                <a href="status.html" class="active">Status</a>
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="portal-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>🔍 Account Status</h1>
+            </div>
+
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-icon" id="service-icon">✅</div>
+                    <h3>Service Status</h3>
+                    <div class="status-badge" id="service-status">Active</div>
+                    <p id="service-message">Your service is running normally</p>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-icon">📋</div>
+                    <h3>Account Info</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Customer ID</span>
+                            <span class="info-value" id="customer-id">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Package</span>
+                            <span class="info-value" id="status-package">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Joined</span>
+                            <span class="info-value" id="join-date">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card full-width">
+                    <div class="status-icon">📊</div>
+                    <h3>Usage Statistics</h3>
+                    <div class="usage-stats">
+                        <div class="stat-row">
+                            <span>Data Used</span>
+                            <span id="data-used">450 GB</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Data Limit</span>
+                            <span id="data-limit">1 TB</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Uptime</span>
+                            <span id="uptime">99.9%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Speed</span>
+                            <span id="speed">100 Mbps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-icon">⚠️</div>
+                    <h3>Alerts & Notifications</h3>
+                    <div id="alerts-list">
+                        <p class="no-alerts">✅ No alerts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/captive-portal.js"></script>
+</body>
+</html>
